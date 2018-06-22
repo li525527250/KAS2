@@ -19,46 +19,50 @@ import net.sf.json.JSON;
 
 /**
  * Servlet implementation class HideKpiIndexServlet
+ * 隐藏KPI指标Servlet
  */
 public class HideKpiIndexServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public HideKpiIndexServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public HideKpiIndexServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("delete----------");
 		response.setContentType("text/html;charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
-		int kpiID= Integer.parseInt(request.getParameter("kpiID"));
-		KPIindexDaoImpl kpIindexDaoImpl=new KPIindexDaoImpl();
-		boolean flag= kpIindexDaoImpl.hideKpiIndex(kpiID);
-		Gson gson=new Gson();
-		String msg="";
-		if(flag){
-			msg="删除成功";
-		}else{
-			msg="删除失败";
+		int kpiID = Integer.parseInt(request.getParameter("kpiID"));//获取KPI指标ID
+		KPIindexDaoImpl kpIindexDaoImpl = new KPIindexDaoImpl();
+		boolean flag = kpIindexDaoImpl.hideKpiIndex(kpiID);//通过KPI指标隐藏这条KPI指标
+		Gson gson = new Gson();
+		String msg = "";
+		if (flag) {
+			msg = "删除成功";
+		} else {
+			msg = "删除失败";
 		}
-		String json= gson.toJson(msg);
+		String json = gson.toJson(msg);//返回JSON数据
 		out.print(json);
 		out.close();
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		this.doGet(request, response);
 	}

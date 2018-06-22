@@ -22,39 +22,42 @@ public class SelectModuleByPostIDToAddKpiServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public SelectModuleByPostIDToAddKpiServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public SelectModuleByPostIDToAddKpiServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
-		MobuleDaoImpl mobuleDaoImpl=new MobuleDaoImpl();
-		int postID=Integer.parseInt(request.getParameter("value"));
-		List<Module> list=mobuleDaoImpl.getModuleByPostID(postID);
-		Gson gson = new Gson();  
-        try {  
-        response.getWriter().print(gson.toJson(list));  
-    } catch (IOException e) {  
-        e.printStackTrace();  
-    } 
+		MobuleDaoImpl mobuleDaoImpl = new MobuleDaoImpl();
+		int postID = Integer.parseInt(request.getParameter("value"));
+		List<Module> list = mobuleDaoImpl.getModuleByPostID(postID);
+		Gson gson = new Gson();
+		try {
+			response.getWriter().print(gson.toJson(list));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		out.flush();
 		out.close();
 	}
-	
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

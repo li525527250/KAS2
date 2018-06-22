@@ -24,18 +24,20 @@ import cn.com.broad.impl.KpiIndexModuleDaoImp;
 public class LeadingOutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public LeadingOutServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public LeadingOutServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
@@ -46,9 +48,9 @@ public class LeadingOutServlet extends HttpServlet {
 		if (excelPuth.equals("E:\\kpiindex.xls")) {
 			message1 = "数据导出成功";
 			request.setAttribute("message1", message1);
-			KpiIndexModuleDaoImp kpiIndexModuleDaoImp=new KpiIndexModuleDaoImp();
-	        List<KpiIndexModule> list=kpiIndexModuleDaoImp.getKpiIndexModule();
-	        LeadingOut.createExcel(list,excelPuth);
+			KpiIndexModuleDaoImp kpiIndexModuleDaoImp = new KpiIndexModuleDaoImp();
+			List<KpiIndexModule> list = kpiIndexModuleDaoImp.getKpiIndexModule();
+			LeadingOut.createExcel(list, excelPuth);
 			request.getRequestDispatcher("product-brand.jsp").forward(request, response);
 		} else {
 			message1 = "数据源错误";
@@ -60,9 +62,11 @@ public class LeadingOutServlet extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

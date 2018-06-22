@@ -33,7 +33,7 @@ $.ajax({
     	obj.options.length=0; 
     $.each(data,function(i,item) { 
         obj.options.add(new Option(item.postName,item.postID));  
-         });  
+         }); 
     }  
     });  
 }  
@@ -66,7 +66,6 @@ function getKpiindex(){
 				</span> <span class="select-box inline"> <select
 					name="search_moduleKey" class="select" id="posts">
 						<option value="0">选择岗位</option>
-
 				</select>
 				</span>
 				<button name="" id="" class="btn btn-success" type="button"
@@ -81,7 +80,7 @@ function getKpiindex(){
 					批量删除</a> <a class="btn btn-primary radius" data-title="添加资讯"
 				data-href="article-add.html" onclick="Hui_admin_tab(this)"
 				href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加资讯</a></span> <span
-				class="r">共有数据：<strong>54</strong> 条
+				class="r"><strong></strong>
 			</span>
 		</div>
 		<div class="mt-20">
@@ -92,11 +91,11 @@ function getKpiindex(){
 						<th width="25"><input type="checkbox" name="" value=""></th>
 						<th width="80">ID</th>
 						<th>KPI指标描述</th>
-						<th width="80">待定</th>
-						<th width="80">待定</th>
-						<th width="120">待定</th>
-						<th width="75">待定</th>
-						<th width="60">待定</th>
+						<th width="80">权重</th>
+						<th width="80">指标释义</th>
+						<th width="120">数据来源</th>
+						<th width="75">计算公式</th>
+						<th width="60">当期得分</th>
 						<th width="120">操作</th>
 					</tr>
 				</thead>
@@ -107,18 +106,17 @@ function getKpiindex(){
 							<td>${list.kpiIndexID }</td>
 							<td class="text-l"><u style="cursor: pointer"
 								class="text-primary"
-								onClick="article_edit('查看','article-zhang.html','10001')"
+								onClick="article_edit('查看','SelectDepartmentAllToUpdateServlet?kpiID=${list.kpiIndexID }','10001')"
 								title="查看">${list.kpiIndexName }</u></td>
-							<td>/</td>
-							<td>/</td>
-							<td>/</td>
-							<td>/</td>
-							<td class="td-status"><span
-								class="label label-success radius">已发布</span></td>
+							<td>${list.weight }</td>
+							<td>${list.indexDefinition }</td>
+							<td>${list.dateSources }</td>
+							<td>${list.computationalFormula }</td>
+							<td class="td-status">${list.currentScore }</td>
 							<td class="f-14 td-manage"><a style="text-decoration: none"
 								class="ml-5"
 								onClick="article_edit('KPI指标编辑','SelectDepartmentAllToUpdateServlet?kpiID=${list.kpiIndexID }','10001')"
-								href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a>
+								href="javascript:;" title="KPI指标编辑"><i class="Hui-iconfont">&#xe6df;</i></a>
 								<a style="text-decoration: none" class="ml-5"
 								onClick="article_del(this,${list.kpiIndexID })" title="删除"><i
 									class="Hui-iconfont">&#xe6e2;</i></a></td>

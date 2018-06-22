@@ -22,30 +22,32 @@ public class UserLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public UserLoginServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public UserLoginServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
-		String userName=request.getParameter("userName");
-		String pwd=request.getParameter("pwd");
-		Users users=new Users(userName,pwd);
-		UsersDaoImpl usersDaoImpl=new UsersDaoImpl();
-		boolean flag= usersDaoImpl.loginUser(users);
-		if(flag){
-			HttpSession session=request.getSession();
+		String userName = request.getParameter("userName");
+		String pwd = request.getParameter("pwd");
+		Users users = new Users(userName, pwd);
+		UsersDaoImpl usersDaoImpl = new UsersDaoImpl();
+		boolean flag = usersDaoImpl.loginUser(users);
+		if (flag) {
+			HttpSession session = request.getSession();
 			session.setAttribute("users", users);
 			request.getRequestDispatcher("index.jsp").forward(request, response);
-		}else{
+		} else {
 			request.getRequestDispatcher("login.jsp").forward(request, response);
 		}
 		out.flush();
@@ -53,9 +55,11 @@ public class UserLoginServlet extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

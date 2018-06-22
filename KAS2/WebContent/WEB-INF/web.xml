@@ -124,4 +124,20 @@
     <servlet-name>HideKpiIndexServlet</servlet-name>
     <url-pattern>/HideKpiIndexServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>StaffLeadingOutServlet</servlet-name>
+    <servlet-class>cn.com.broad.servlet.StaffLeadingOutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StaffLeadingOutServlet</servlet-name>
+    <url-pattern>/StaffLeadingOutServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>StaffInsertExcelServlet</servlet-name>
+    <servlet-class>cn.com.broad.servlet.StaffInsertExcelServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StaffInsertExcelServlet</servlet-name>
+    <url-pattern>/StaffInsertExcelServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

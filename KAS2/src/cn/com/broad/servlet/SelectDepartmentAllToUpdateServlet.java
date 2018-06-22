@@ -22,27 +22,29 @@ public class SelectDepartmentAllToUpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public SelectDepartmentAllToUpdateServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public SelectDepartmentAllToUpdateServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
-		DepartmentDaoImpl departmentDaoImpl=new DepartmentDaoImpl();
-		int kpiID=Integer.parseInt(request.getParameter("kpiID"));
-		KPIindexDaoImpl kpIindexDaoImpl=new KPIindexDaoImpl();
-		Kpiindex kpiindex=kpIindexDaoImpl.getKpiIndexByKpiID(kpiID);
-		List<Department> list=departmentDaoImpl.getDepertmentAll();
-		if(list!=null){
+		DepartmentDaoImpl departmentDaoImpl = new DepartmentDaoImpl();
+		int kpiID = Integer.parseInt(request.getParameter("kpiID"));
+		KPIindexDaoImpl kpIindexDaoImpl = new KPIindexDaoImpl();
+		Kpiindex kpiindex = kpIindexDaoImpl.getKpiIndexByKpiID(kpiID);
+		List<Department> list = departmentDaoImpl.getDepertmentAll();
+		if (list != null) {
 			request.setAttribute("kpiindex1", kpiindex);
 			request.setAttribute("departmentlist", list);
 			request.getRequestDispatcher("article-add.jsp").forward(request, response);
@@ -52,9 +54,11 @@ public class SelectDepartmentAllToUpdateServlet extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

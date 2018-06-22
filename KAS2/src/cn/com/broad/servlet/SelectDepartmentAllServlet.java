@@ -25,22 +25,24 @@ public class SelectDepartmentAllServlet extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SelectDepartmentAllServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	public SelectDepartmentAllServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
-		DepartmentDaoImpl departmentDaoImpl=new DepartmentDaoImpl();
-		List<Department> list=departmentDaoImpl.getDepertmentAll();
-		if(list!=null){
+		DepartmentDaoImpl departmentDaoImpl = new DepartmentDaoImpl();
+		List<Department> list = departmentDaoImpl.getDepertmentAll();
+		if (list != null) {
 			request.setAttribute("departmentlist", list);
 			request.getRequestDispatcher("article-list.jsp").forward(request, response);
 		}
@@ -49,9 +51,11 @@ public class SelectDepartmentAllServlet extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

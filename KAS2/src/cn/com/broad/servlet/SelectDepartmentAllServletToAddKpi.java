@@ -18,26 +18,28 @@ import cn.com.broad.impl.DepartmentDaoImpl;
  */
 public class SelectDepartmentAllServletToAddKpi extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public SelectDepartmentAllServletToAddKpi() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public SelectDepartmentAllServletToAddKpi() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
-		DepartmentDaoImpl departmentDaoImpl=new DepartmentDaoImpl();
-		List<Department> list=departmentDaoImpl.getDepertmentAll();
-		if(list!=null){
+		DepartmentDaoImpl departmentDaoImpl = new DepartmentDaoImpl();
+		List<Department> list = departmentDaoImpl.getDepertmentAll();
+		if (list != null) {
 			request.setAttribute("departmentlist", list);
 			request.getRequestDispatcher("system-base.jsp").forward(request, response);
 		}
@@ -46,9 +48,11 @@ public class SelectDepartmentAllServletToAddKpi extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
