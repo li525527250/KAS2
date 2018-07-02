@@ -16,10 +16,9 @@ public class StaffKpiIndexModuleDaoImpl implements StaffKpiIndexModuleDao{
 	public List<StaffKpiIndexModule> getStaffKpiIndexModule() {
 		// TODO Auto-generated method stub
 		List<StaffKpiIndexModule> list = new ArrayList<StaffKpiIndexModule>();
-		String sql = "SELECT s.staffName,s.staffID,s.StaffJobNumber"
-				+ ",m.moduleName,m.moduleID,k.KPAIndexName,k.KPAIndexID"
-				+ " from staff s INNER join module m on s.postID = m.postID"
-				+ " INNER JOIN kpiindex k on m.moduleID = k.moduleID";
+		String sql = "SELECT s.staffName,s.staffID,s.StaffJobNumber,m.moduleName,m.moduleID,"
+				+ "k.KPIIndexName,k.KPIIndexID from staff s INNER join module m"
+				+ " on s.postID = m.postID INNER JOIN kpiindex k on m.moduleID = k.moduleID";
 		Connection con = BaseDao.conn();
 		Statement psta = null;
 		ResultSet rs = null;

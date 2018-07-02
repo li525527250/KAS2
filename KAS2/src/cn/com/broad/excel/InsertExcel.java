@@ -121,18 +121,6 @@ public class InsertExcel {
 						cell.setCellType(1);
 						kpiindex.setCurrentTarget(cell.getStringCellValue());
 						break;
-					case 16:
-						cell.setCellType(1);
-						kpiindex.setCurrentReality(cell.getStringCellValue());
-						break;
-					case 17:
-						cell.setCellType(1);
-						kpiindex.setCurrentYieldRate(cell.getStringCellValue());
-						break;
-					case 18:
-						cell.setCellType(1);
-						kpiindex.setCurrentScore(cell.getStringCellValue());
-						break;
 					}
 				}
 				try {

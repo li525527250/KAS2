@@ -5,12 +5,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="jquery,ui,easy,easyui,web">
+<meta name="description"
+	content="easyui help you build your web page easily!">
 <link rel="stylesheet" type="text/css"
 	href="static/h-ui/css/H-ui.min.css" />
 <link rel="stylesheet" type="text/css"
 	href="static/h-ui.admin/css/H-ui.admin.css" />
 <link rel="stylesheet" type="text/css"
 	href="lib/Hui-iconfont/1.0.8/iconfont.css" />
+	<link rel="stylesheet" type="text/css" href="css/easyui.css">
+	<link rel="stylesheet" type="text/css" href="css/icon.css">
+<link rel="stylesheet" type="text/css" href="css/demo.css">
 <link rel="stylesheet" type="text/css"
 	href="static/h-ui.admin/skin/default/skin.css" id="skin" />
 <link rel="stylesheet" type="text/css"
@@ -44,7 +50,30 @@
 		file.select();
 		var realPath = document.selection.createRange().text;
 	}
+	
+	function getkpiexaminedateperiod() {  
+	    var systemKey=$("#department").val(); //获得第一个列表元素的主键  
+		var obj=document.getElementById("posts");//回去id为。。的html元素  
+	$.ajax({  
+	    type : 'GET',    
+	    contentType : 'application/json', 
+	    url : 'SelectKpiExamineDatePeriod?value='+systemKey, //调用后台控制类的方法  
+	    dataType : 'json',    
+	    success : function(data) {  
+	    	obj.options.length=0; 
+	    $.each(data,function(i,item) { 
+	        obj.options.add(new Option(item.kpiExamineDatePeriodName,item.kpiExamineDatePeriodID));  
+	         }); 
+	    }  
+	    });  
+	}  
 </script>
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript"
+	src="http://www.w3cschool.cc/try/jeasyui/jquery.easyui.min.js"></script>
+<script type="text/javascript"
+	src="http://www.w3cschool.cc/try/jeasyui/datagrid-scrollview.js"></script>
 <title>品牌管理</title>
 </head>
 <body>
@@ -83,10 +112,27 @@
 				</form>
 			</div>
 		</div>
+
 		<div class="text-c">
 			<div style="margin-bottom: 50px;">
 				<form class="Huiform" method="post" action="StaffInsertExcelServlet"
 					target="_self">
+					<div style="margin-bottom: 50px;">
+						请选择考核类型: <span class="select-box inline"> <select
+							name="search_systemKey" onchange="getkpiexaminedateperiod()"
+							class="select" id="department">
+								<option value="0">选择考核类型</option>
+								<c:forEach items="${list}" var="item">
+									<option value="${item.kpiExamineDateTypeID }">${item.kpiExamineDateTypeName }</option>
+								</c:forEach>
+						</select>
+						</span> <span class="select-box inline"> <select
+							name="search_moduleKey" class="select" id="posts">
+								<option value="0">选择考核周期</option>
+						</select>
+						</span>选择时间： <input id="dd" name="dd" type="text" class="easyui-datebox"
+							>
+					</div>
 					<span>导入文件 : </span><span class="btn-upload form-group"> <input
 						class="input-text upload-url" type="text" name="excelFile"
 						id="excelFile" readonly style="width: 200px"> <a

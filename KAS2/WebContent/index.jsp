@@ -142,7 +142,7 @@
 					<ul>
 						<li><a data-href="product-brand.jsp" data-title="KPI指标导入"
 							href="javascript:void(0)">KPI指标导入</a></li>
-							<li><a data-href="product-brand2.jsp" data-title="员工KPI考核导入"
+							<li><a data-href="SerlectKpiExamineDateTypeServlet" data-title="员工KPI考核导入"
 							href="javascript:void(0)">员工KPI考核导入</a></li>
 						<li><a data-href="SelectDepartmentAllServlet"
 							data-title="KPI指标查询" href="javascript:void(0)">KPI指标查询</a></li>

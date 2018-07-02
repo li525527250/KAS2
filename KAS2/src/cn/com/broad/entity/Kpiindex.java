@@ -16,9 +16,6 @@ public class Kpiindex {
 	private String annualObjectives;// 年度目标
 	private String quarterlyAccounting;// 季度核算
 	private String currentTarget;// 当期目标
-	private String currentReality;// 当期实际
-	private String currentYieldRate;// 当期达成率
-	private String currentScore;// 当期得分
 	private int ifDelete;// 是否删除1--隐藏，0---显示
 
 	public int getIfDelete() {
@@ -125,33 +122,11 @@ public class Kpiindex {
 		this.currentTarget = currentTarget;
 	}
 
-	public String getCurrentReality() {
-		return currentReality;
-	}
 
-	public void setCurrentReality(String currentReality) {
-		this.currentReality = currentReality;
-	}
-
-	public String getCurrentYieldRate() {
-		return currentYieldRate;
-	}
-
-	public void setCurrentYieldRate(String currentYieldRate) {
-		this.currentYieldRate = currentYieldRate;
-	}
-
-	public String getCurrentScore() {
-		return currentScore;
-	}
-
-	public void setCurrentScore(String currentScore) {
-		this.currentScore = currentScore;
-	}
 
 	public Kpiindex(int kpiIndexID, String kpiIndexName, int postID, String weight, String span, String indexDefinition,
 			String dateSources, String computationalFormula, String annualObjectives, String quarterlyAccounting,
-			String currentTarget, String currentReality, String currentYieldRate, String currentScore) {
+			String currentTarget) {
 		super();
 		this.kpiIndexID = kpiIndexID;
 		this.kpiIndexName = kpiIndexName;
@@ -164,14 +139,10 @@ public class Kpiindex {
 		this.annualObjectives = annualObjectives;
 		this.quarterlyAccounting = quarterlyAccounting;
 		this.currentTarget = currentTarget;
-		this.currentReality = currentReality;
-		this.currentYieldRate = currentYieldRate;
-		this.currentScore = currentScore;
 	}
 
 	public Kpiindex(int kpiIndexID, int postID, String weight, String span, String indexDefinition, String dateSources,
-			String computationalFormula, String annualObjectives, String quarterlyAccounting, String currentTarget,
-			String currentReality, String currentYieldRate, String currentScore) {
+			String computationalFormula, String annualObjectives, String quarterlyAccounting, String currentTarget) {
 		super();
 		this.kpiIndexID = kpiIndexID;
 		this.postID = postID;
@@ -183,24 +154,13 @@ public class Kpiindex {
 		this.annualObjectives = annualObjectives;
 		this.quarterlyAccounting = quarterlyAccounting;
 		this.currentTarget = currentTarget;
-		this.currentReality = currentReality;
-		this.currentYieldRate = currentYieldRate;
-		this.currentScore = currentScore;
 	}
 
-	@Override
-	public String toString() {
-		return "Kpiindex [kpiIndexID=" + kpiIndexID + ", kpiIndexName=" + kpiIndexName + ", moduleID=" + moduleID
-				+ ", postID=" + postID + ", weight=" + weight + ", span=" + span + ", indexDefinition="
-				+ indexDefinition + ", dateSources=" + dateSources + ", computationalFormula=" + computationalFormula
-				+ ", annualObjectives=" + annualObjectives + ", quarterlyAccounting=" + quarterlyAccounting
-				+ ", currentTarget=" + currentTarget + ", currentReality=" + currentReality + ", currentYieldRate="
-				+ currentYieldRate + ", currentScore=" + currentScore + ", ifDelete=" + ifDelete + "]";
-	}
+
 
 	public Kpiindex(String kpiIndexName, int moduleID, int postID, String weight, String span, String indexDefinition,
 			String dateSources, String computationalFormula, String annualObjectives, String quarterlyAccounting,
-			String currentTarget, String currentReality, String currentYieldRate, String currentScore) {
+			String currentTarget) {
 		super();
 		this.kpiIndexName = kpiIndexName;
 		this.moduleID = moduleID;
@@ -213,15 +173,11 @@ public class Kpiindex {
 		this.annualObjectives = annualObjectives;
 		this.quarterlyAccounting = quarterlyAccounting;
 		this.currentTarget = currentTarget;
-		this.currentReality = currentReality;
-		this.currentYieldRate = currentYieldRate;
-		this.currentScore = currentScore;
 	}
 
 	public Kpiindex(int kpiIndexID, String kpiIndexName, int moduleID, int postID, String weight, String span,
 			String indexDefinition, String dateSources, String computationalFormula, String annualObjectives,
-			String quarterlyAccounting, String currentTarget, String currentReality, String currentYieldRate,
-			String currentScore, int ifdelete) {
+			String quarterlyAccounting, String currentTarget,int ifdelete) {
 		super();
 		this.kpiIndexID = kpiIndexID;
 		this.kpiIndexName = kpiIndexName;
@@ -235,9 +191,6 @@ public class Kpiindex {
 		this.annualObjectives = annualObjectives;
 		this.quarterlyAccounting = quarterlyAccounting;
 		this.currentTarget = currentTarget;
-		this.currentReality = currentReality;
-		this.currentYieldRate = currentYieldRate;
-		this.currentScore = currentScore;
 		this.ifDelete = ifdelete;
 	}
 

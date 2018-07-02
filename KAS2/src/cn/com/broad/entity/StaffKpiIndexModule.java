@@ -1,13 +1,16 @@
 package cn.com.broad.entity;
 
+/*
+ * 员工个人KPI指标模板
+ * */
 public class StaffKpiIndexModule {
-	private String staffName;
-	private int staffID;
-	private String StaffJobNumber;
-	private String moduleName;
-	private int moduleID;
-	private String KPAIndexName;
-	private int KPAIndexID;
+	private String staffName;//员工名字
+	private int staffID;//员工ID
+	private String StaffJobNumber;//员工工号
+	private String moduleName;//模板名称
+	private int moduleID;//模板ID
+	private String KPAIndexName;//KPI指标名称
+	private int KPAIndexID;//KPI指标ID
 	public String getStaffName() {
 		return staffName;
 	}

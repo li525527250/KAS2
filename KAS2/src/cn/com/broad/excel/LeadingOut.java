@@ -89,17 +89,6 @@ public class LeadingOut {
 		headCell.setCellValue("当期目标");
 		headCell.setCellStyle(cellStyle);
 
-		headCell = hssfRow.createCell(16);
-		headCell.setCellValue("当期实际");
-		headCell.setCellStyle(cellStyle);
-
-		headCell = hssfRow.createCell(17);
-		headCell.setCellValue("当期达成率");
-		headCell.setCellStyle(cellStyle);
-
-		headCell = hssfRow.createCell(18);
-		headCell.setCellValue("当期得分");
-		headCell.setCellStyle(cellStyle);
 
 		// 添加数据内容
 		for (int i = 0; i < list.size(); i++) {

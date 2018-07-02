@@ -186,27 +186,6 @@ $.ajax({
 								value="" class="input-text">
 						</div>
 					</div>
-					<div class="row cl">
-						<label class="form-label col-xs-4 col-sm-2">当期实际：</label>
-						<div class="formControls col-xs-8 col-sm-9">
-							<input type="text" id="website-icp" placeholder="百分比(%)或文字描述" name="currentReality"
-								value="" class="input-text">
-						</div>
-					</div>
-					<div class="row cl">
-						<label class="form-label col-xs-4 col-sm-2">当期达成率：</label>
-						<div class="formControls col-xs-8 col-sm-9">
-							<input type="text" id="website-icp" placeholder="百分比(%)或文字描述" name="currentYieldRate"
-								value="" class="input-text">
-						</div>
-					</div>
-					<div class="row cl">
-						<label class="form-label col-xs-4 col-sm-2">当期得分：</label>
-						<div class="formControls col-xs-8 col-sm-9">
-							<input type="text" id="website-icp" placeholder="数字描述" value="" name="currentScore"
-								class="input-text">
-						</div>
-					</div>
 				</div>
 			</div>
 		<div class="row cl">

@@ -35,10 +35,10 @@ public class InsertExcelToStaff {
 	private InsertExcelToStaff() {
 	}
 
-	public static void start(InputStream in, String path) throws FileNotFoundException, IOException {
+	public static void start(InputStream in, String path,String date,int kpiExamineDatePeriodID) throws FileNotFoundException, IOException {
 		Workbook book = getWorkBook(in, path); // 1.获取工作簿
 		List<Sheet> sheets = getSheets(book); // 2.获取所有工作表
-		SheetIterator(sheets);// 3.对所有工作表进行操作
+		SheetIterator(sheets,date,kpiExamineDatePeriodID);// 3.对所有工作表进行操作
 	}
 
 	// 1.获取工作簿
@@ -58,7 +58,7 @@ public class InsertExcelToStaff {
 	}
 
 	// 3.对所有工作表进行操作
-	private static void SheetIterator(List<Sheet> sheets) {
+	private static void SheetIterator(List<Sheet> sheets,String date,int kpiExamineDatePeriodID) {
 		insertCount1 = 0;
 		addBeDefeated1 = 0;
 		BeDefeatedMessage1 = "插入失败数据ID :";
@@ -84,19 +84,19 @@ public class InsertExcelToStaff {
 					switch (cell.getColumnIndex()) {
 					// 将单元格内容设置为String类型，也可以这样写cell.setCellType(Cell.CELL_TYPE_STRING);
 					case 1:
-						cell.setCellType(1);// 岗位ID
+						cell.setCellType(1);
 						staffKpi.setStaffID(Integer.parseInt(cell.getStringCellValue()));
 						break;
 					case 2:
-						cell.setCellType(1);// 岗位ID
+						cell.setCellType(1);
 						staffKpi.setStaffJobNunmber(cell.getStringCellValue());
 						break;
 					case 4:
-						cell.setCellType(1);// 岗位ID
+						cell.setCellType(1);
 						staffKpi.setModuleID(Integer.parseInt(cell.getStringCellValue()));
 						break;
 					case 6:
-						cell.setCellType(1);// 岗位ID
+						cell.setCellType(1);
 						staffKpi.setKpiindexID(Integer.parseInt(cell.getStringCellValue()));
 						break;
 					case 7:
@@ -115,8 +115,11 @@ public class InsertExcelToStaff {
 				}
 				try {
 					insertCount1 = insertCount1 + 1;
-					System.out.println(staffKpi);
 					StaffKpiDaoimpl staffKpiDaoimpl=new StaffKpiDaoimpl();
+					staffKpi.setDate(date);
+					staffKpi.setKpiExamineDatePeriodID(kpiExamineDatePeriodID);
+					System.out.println(staffKpi);
+					
 					System.out.println(staffKpiDaoimpl.addStaffKpi(staffKpi));
 				} catch (Exception e) {
 					addBeDefeated1= addBeDefeated1 + 1;

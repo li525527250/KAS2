@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -56,15 +55,8 @@ public class UpdateKpiIndexByKpiIDServlet extends HttpServlet {
 		quarterlyAccounting = new String(quarterlyAccounting.getBytes("ISO-8859-1"), "UTF-8");
 		String currentTarget = request.getParameter("currentTarget");
 		currentTarget = new String(currentTarget.getBytes("ISO-8859-1"), "UTF-8");
-		String currentReality = request.getParameter("currentReality");
-		currentReality = new String(currentReality.getBytes("ISO-8859-1"), "UTF-8");
-		String currentYieldRate = request.getParameter("currentYieldRate");
-		currentYieldRate = new String(currentYieldRate.getBytes("ISO-8859-1"), "UTF-8");
-		String currentScore = request.getParameter("currentScore");
-		currentScore = new String(currentScore.getBytes("ISO-8859-1"), "UTF-8");
 		Kpiindex kpiindex = new Kpiindex(kpiindexID, kpiIndexName, postID, weight, span, indexDefinition, dateSources,
-				computationalFormula, annualObjectives, quarterlyAccounting, currentTarget, currentReality,
-				currentYieldRate, currentScore);
+				computationalFormula, annualObjectives, quarterlyAccounting, currentTarget);
 		KPIindexDaoImpl kpIindexDaoImpl = new KPIindexDaoImpl();
 		boolean flag = kpIindexDaoImpl.updateKPIindex(kpiindex);
 		String message = "";

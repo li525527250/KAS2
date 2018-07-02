@@ -37,7 +37,6 @@
 						obj.options.length = 0;
 						obj.options.add(new Option("选择岗位", 0));
 						$.each(data, function(i, item) {
-
 							obj.options.add(new Option(item.postName,
 									item.postID));
 						});
@@ -194,30 +193,6 @@
 						<div class="formControls col-xs-8 col-sm-9">
 							<input type="text" id="website-icp" placeholder="百分比(%)或文字描述"
 								name="currentTarget" value="${kpiindex1.currentTarget }"
-								class="input-text">
-						</div>
-					</div>
-					<div class="row cl">
-						<label class="form-label col-xs-4 col-sm-2">当期实际：</label>
-						<div class="formControls col-xs-8 col-sm-9">
-							<input type="text" id="website-icp" placeholder="百分比(%)或文字描述"
-								name="currentReality" value="${kpiindex1.currentReality }"
-								class="input-text">
-						</div>
-					</div>
-					<div class="row cl">
-						<label class="form-label col-xs-4 col-sm-2">当期达成率：</label>
-						<div class="formControls col-xs-8 col-sm-9">
-							<input type="text" id="website-icp" placeholder="百分比(%)或文字描述"
-								name="currentYieldRate" value="${kpiindex1.currentYieldRate }"
-								class="input-text">
-						</div>
-					</div>
-					<div class="row cl">
-						<label class="form-label col-xs-4 col-sm-2">当期得分：</label>
-						<div class="formControls col-xs-8 col-sm-9">
-							<input type="text" id="website-icp" placeholder="数字描述"
-								value="${kpiindex1.currentScore }" name="currentScore"
 								class="input-text">
 						</div>
 					</div>

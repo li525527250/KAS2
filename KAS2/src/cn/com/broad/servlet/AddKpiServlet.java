@@ -50,12 +50,8 @@ public class AddKpiServlet extends HttpServlet {
 		String annualObjectives = request.getParameter("annualObjectives");//获取季度考核
 		String quarterlyAccounting = request.getParameter("quarterlyAccounting");//获取年度目标
 		String currentTarget = request.getParameter("currentTarget");//获取当期目标
-		String currentReality = request.getParameter("currentReality");//获取当期实际
-		String currentYieldRate = request.getParameter("currentYieldRate");//获取当期达成率
-		String currentScore = request.getParameter("currentScore");//获取当期得分
 		Kpiindex kpiindex = new Kpiindex(kpiIndexName, moduleID, postID, weight, span, indexDefinition, dateSources,
-				computationalFormula, annualObjectives, quarterlyAccounting, currentTarget, currentReality,
-				currentYieldRate, currentScore);//KPI指标实体类
+				computationalFormula, annualObjectives, quarterlyAccounting, currentTarget);//KPI指标实体类
 		KPIindexDaoImpl kpIindexDaoImpl = new KPIindexDaoImpl();
 		boolean flag = kpIindexDaoImpl.addKPIindex(kpiindex);//添加KPI指标
 		String message = "";//添加成功失败返回消息

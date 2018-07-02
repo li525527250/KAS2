@@ -49,11 +49,11 @@ public class StaffLeadingOutServlet extends HttpServlet {
 			StaffKpiIndexModuleDaoImpl staffKpiIndexModuleDaoImpl=new StaffKpiIndexModuleDaoImpl();
 			List<StaffKpiIndexModule> list2=staffKpiIndexModuleDaoImpl.getStaffKpiIndexModule();
 			LeadingOutToStaff.createExcel(list2, excelPuth);
-			request.getRequestDispatcher("product-brand2.jsp").forward(request, response);
+			request.getRequestDispatcher("SerlectKpiExamineDateTypeServlet").forward(request, response);
 		} else {
 			message1 = "数据源错误";
 			request.setAttribute("message1", message1);
-			request.getRequestDispatcher("product-brand2.jsp").forward(request, response);
+			request.getRequestDispatcher("SerlectKpiExamineDateTypeServlet").forward(request, response);
 		}
 		out.flush();
 		out.close();

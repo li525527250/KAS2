@@ -90,7 +90,7 @@ function getKpiindex(){
 					<tr class="text-c">
 						<th width="25"><input type="checkbox" name="" value=""></th>
 						<th width="80">ID</th>
-						<th>KPI指标描述</th>
+						<th width="80">KPI指标描述</th>
 						<th width="80">权重</th>
 						<th width="80">指标释义</th>
 						<th width="120">数据来源</th>
@@ -112,7 +112,7 @@ function getKpiindex(){
 							<td>${list.indexDefinition }</td>
 							<td>${list.dateSources }</td>
 							<td>${list.computationalFormula }</td>
-							<td class="td-status">${list.currentScore }</td>
+							<td class="td-status">/</td>
 							<td class="f-14 td-manage"><a style="text-decoration: none"
 								class="ml-5"
 								onClick="article_edit('KPI指标编辑','SelectDepartmentAllToUpdateServlet?kpiID=${list.kpiIndexID }','10001')"

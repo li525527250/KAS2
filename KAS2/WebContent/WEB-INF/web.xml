@@ -140,4 +140,20 @@
     <servlet-name>StaffInsertExcelServlet</servlet-name>
     <url-pattern>/StaffInsertExcelServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>SerlectKpiExamineDateTypeServlet</servlet-name>
+    <servlet-class>cn.com.broad.servlet.SerlectKpiExamineDateTypeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SerlectKpiExamineDateTypeServlet</servlet-name>
+    <url-pattern>/SerlectKpiExamineDateTypeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SelectKpiExamineDatePeriod</servlet-name>
+    <servlet-class>cn.com.broad.servlet.SelectKpiExamineDatePeriod</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SelectKpiExamineDatePeriod</servlet-name>
+    <url-pattern>/SelectKpiExamineDatePeriod</url-pattern>
+  </servlet-mapping>
 </web-app>

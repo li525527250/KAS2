@@ -24,8 +24,7 @@ public class KPIindexDaoImpl implements KPIindexDao {
 		Object[] args = new Object[] { kpiindex.getKpiIndexName(), kpiindex.getModuleID(), kpiindex.getPostID(),
 				kpiindex.getWeight(), kpiindex.getSpan(), kpiindex.getIndexDefinition(), kpiindex.getDateSources(),
 				kpiindex.getComputationalFormula(), kpiindex.getAnnualObjectives(), kpiindex.getQuarterlyAccounting(),
-				kpiindex.getCurrentTarget(), kpiindex.getCurrentReality(), kpiindex.getCurrentYieldRate(),
-				kpiindex.getCurrentScore(), kpiindex.getIfDelete() };
+				kpiindex.getCurrentTarget(), kpiindex.getIfDelete() };
 		return BaseDao.executeUpdate(sql, args);
 	}
 
@@ -49,8 +48,7 @@ public class KPIindexDaoImpl implements KPIindexDao {
 		Object[] args = new Object[] { kpiindex.getKpiIndexName(), kpiindex.getPostID(), kpiindex.getWeight(),
 				kpiindex.getSpan(), kpiindex.getIndexDefinition(), kpiindex.getDateSources(),
 				kpiindex.getComputationalFormula(), kpiindex.getAnnualObjectives(), kpiindex.getQuarterlyAccounting(),
-				kpiindex.getCurrentTarget(), kpiindex.getCurrentReality(), kpiindex.getCurrentYieldRate(),
-				kpiindex.getCurrentScore(), kpiindex.getKpiIndexID() };
+				kpiindex.getCurrentTarget(),kpiindex.getKpiIndexID() };
 		return BaseDao.executeUpdate(sql, args);
 	}
 
@@ -64,7 +62,6 @@ public class KPIindexDaoImpl implements KPIindexDao {
 		Object[] args = new Object[] { kpiindex.getPostID(), kpiindex.getWeight(), kpiindex.getSpan(),
 				kpiindex.getIndexDefinition(), kpiindex.getDateSources(), kpiindex.getComputationalFormula(),
 				kpiindex.getAnnualObjectives(), kpiindex.getQuarterlyAccounting(), kpiindex.getCurrentTarget(),
-				kpiindex.getCurrentReality(), kpiindex.getCurrentYieldRate(), kpiindex.getCurrentScore(),
 				kpiindex.getKpiIndexID() };
 		return BaseDao.executeUpdate(sql, args);
 	}
@@ -95,10 +92,7 @@ public class KPIindexDaoImpl implements KPIindexDao {
 				k.setAnnualObjectives(rs.getString(10));
 				k.setQuarterlyAccounting(rs.getString(11));
 				k.setCurrentTarget(rs.getString(12));
-				k.setCurrentReality(rs.getString(13));
-				k.setCurrentYieldRate(rs.getString(14));
-				k.setCurrentScore(rs.getString(15));
-				k.setIfDelete(rs.getInt(16));
+				k.setIfDelete(rs.getInt(13));
 				list.add(k);
 			}
 		} catch (Exception e) {
@@ -135,10 +129,7 @@ public class KPIindexDaoImpl implements KPIindexDao {
 				k.setAnnualObjectives(rs.getString(10));
 				k.setQuarterlyAccounting(rs.getString(11));
 				k.setCurrentTarget(rs.getString(12));
-				k.setCurrentReality(rs.getString(13));
-				k.setCurrentYieldRate(rs.getString(14));
-				k.setCurrentScore(rs.getString(15));
-				k.setIfDelete(rs.getInt(16));
+				k.setIfDelete(rs.getInt(13));
 				list.add(k);
 			}
 		} catch (Exception e) {
@@ -183,10 +174,7 @@ public class KPIindexDaoImpl implements KPIindexDao {
 				k.setAnnualObjectives(rs.getString(10));
 				k.setQuarterlyAccounting(rs.getString(11));
 				k.setCurrentTarget(rs.getString(12));
-				k.setCurrentReality(rs.getString(13));
-				k.setCurrentYieldRate(rs.getString(14));
-				k.setCurrentScore(rs.getString(15));
-				k.setIfDelete(rs.getInt(16));
+				k.setIfDelete(rs.getInt(13));
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
