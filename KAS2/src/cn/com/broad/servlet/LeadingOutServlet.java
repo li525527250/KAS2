@@ -20,6 +20,7 @@ import cn.com.broad.impl.KpiIndexModuleDaoImp;
 
 /**
  * Servlet implementation class LeadingOutServlet
+ * 下载KPI模板servlet
  */
 public class LeadingOutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -42,15 +43,15 @@ public class LeadingOutServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
-		String excelPuth = request.getParameter("excelFile1");
+		String excelPuth = request.getParameter("excelFile1");//获取kpi指标Excel表格路径
 		excelPuth = new String(excelPuth.getBytes("ISO-8859-1"), "UTF-8");
 		String message1 = "";
 		if (excelPuth.equals("E:\\kpiindex.xls")) {
 			message1 = "数据导出成功";
 			request.setAttribute("message1", message1);
 			KpiIndexModuleDaoImp kpiIndexModuleDaoImp = new KpiIndexModuleDaoImp();
-			List<KpiIndexModule> list = kpiIndexModuleDaoImp.getKpiIndexModule();
-			LeadingOut.createExcel(list, excelPuth);
+			List<KpiIndexModule> list = kpiIndexModuleDaoImp.getKpiIndexModule();//查询错KPI指标模板list集合
+			LeadingOut.createExcel(list, excelPuth);//调用Excel帮助类
 			request.getRequestDispatcher("product-brand.jsp").forward(request, response);
 		} else {
 			message1 = "数据源错误";

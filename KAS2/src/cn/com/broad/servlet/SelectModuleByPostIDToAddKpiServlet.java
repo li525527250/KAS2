@@ -23,6 +23,7 @@ public class SelectModuleByPostIDToAddKpiServlet extends HttpServlet {
        
     /**
 	 * @see HttpServlet#HttpServlet()
+	 * 通过岗位ID查询出该岗位下的模块用于添加KPI指标
 	 */
 	public SelectModuleByPostIDToAddKpiServlet() {
 		super();
@@ -40,11 +41,11 @@ public class SelectModuleByPostIDToAddKpiServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
 		MobuleDaoImpl mobuleDaoImpl = new MobuleDaoImpl();
-		int postID = Integer.parseInt(request.getParameter("value"));
-		List<Module> list = mobuleDaoImpl.getModuleByPostID(postID);
+		int postID = Integer.parseInt(request.getParameter("value"));//获取岗位ID
+		List<Module> list = mobuleDaoImpl.getModuleByPostID(postID);//通过岗位ID查询模块list
 		Gson gson = new Gson();
 		try {
-			response.getWriter().print(gson.toJson(list));
+			response.getWriter().print(gson.toJson(list));//返回json数据
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

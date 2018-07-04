@@ -19,6 +19,7 @@ import cn.com.broad.impl.PostDaoImpl;
 
 /**
  * Servlet implementation class SelectKpiExamineDatePeriod
+ * 查询出kpi质变考核周期
  */
 public class SelectKpiExamineDatePeriod extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -40,8 +41,8 @@ public class SelectKpiExamineDatePeriod extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
 		KpiExamineDatePeriodDaoImpl kpiExamineDatePeriodDaoImpl=new KpiExamineDatePeriodDaoImpl();
-		int kpiExamineDateTypeID = Integer.parseInt(request.getParameter("value"));
-		List<KpiExamineDatePeriod> list = kpiExamineDatePeriodDaoImpl.getKpiExamineDatePeriod(kpiExamineDateTypeID);
+		int kpiExamineDateTypeID = Integer.parseInt(request.getParameter("value"));//获取kpi考核类型ID
+		List<KpiExamineDatePeriod> list = kpiExamineDatePeriodDaoImpl.getKpiExamineDatePeriod(kpiExamineDateTypeID);//通过kpi指标考核类型ID查询出所有考核周期
 		Gson gson = new Gson();
 		try {
 			response.getWriter().print(gson.toJson(list));

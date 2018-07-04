@@ -17,6 +17,7 @@ import cn.com.broad.impl.PostDaoImpl;
 
 /**
  * Servlet implementation class SelectPostsByDepartmentToAddKpiServlet
+ * 通过部门ID查询出该部门下的所有岗位用于添加kpi指标
  */
 public class SelectPostsByDepartmentToAddKpiServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -40,8 +41,8 @@ public class SelectPostsByDepartmentToAddKpiServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
 		PostDaoImpl postDaoImpl = new PostDaoImpl();
-		int departmentID = Integer.parseInt(request.getParameter("value"));
-		List<Posts> list = postDaoImpl.getPostByDepartmentId(departmentID);
+		int departmentID = Integer.parseInt(request.getParameter("value"));//获取部门ID
+		List<Posts> list = postDaoImpl.getPostByDepartmentId(departmentID);//通过部门ID查询出该部门下的所有岗位list集合
 		Gson gson = new Gson();
 		try {
 			response.getWriter().print(gson.toJson(list));

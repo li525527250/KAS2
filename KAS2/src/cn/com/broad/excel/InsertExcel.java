@@ -81,7 +81,7 @@ public class InsertExcel {
 					Cell cell = cellIterator.next();
 					switch (cell.getColumnIndex()) {
 					// 将单元格内容设置为String类型，也可以这样写cell.setCellType(Cell.CELL_TYPE_STRING);
-					case 3:
+					case 3:	
 						cell.setCellType(1);// 岗位ID
 						kpiindex.setPostID(Integer.parseInt(cell.getStringCellValue()));
 						break;

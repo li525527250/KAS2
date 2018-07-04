@@ -14,8 +14,8 @@
 	href="static/h-ui.admin/css/H-ui.admin.css" />
 <link rel="stylesheet" type="text/css"
 	href="lib/Hui-iconfont/1.0.8/iconfont.css" />
-	<link rel="stylesheet" type="text/css" href="css/easyui.css">
-	<link rel="stylesheet" type="text/css" href="css/icon.css">
+<link rel="stylesheet" type="text/css" href="css/easyui.css">
+<link rel="stylesheet" type="text/css" href="css/icon.css">
 <link rel="stylesheet" type="text/css" href="css/demo.css">
 <link rel="stylesheet" type="text/css"
 	href="static/h-ui.admin/skin/default/skin.css" id="skin" />
@@ -78,10 +78,9 @@
 </head>
 <body>
 
-	<nav class="breadcrumb">
-	<i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span>
-	KPI指标管理 <span class="c-gray en">&gt;</span> 员工KPI考核导入<a
-		class="btn btn-success radius r"
+	<nav class="breadcrumb"> <i class="Hui-iconfont">&#xe67f;</i> 首页
+	<span class="c-gray en">&gt;</span> KPI指标管理 <span class="c-gray en">&gt;</span>
+	员工KPI考核导入<a class="btn btn-success radius r"
 		style="line-height: 1.6em; margin-top: 3px"
 		href="javascript:location.replace(location.href);" title="刷新"><i
 		class="Hui-iconfont">&#xe68f;</i></a></nav>
@@ -130,8 +129,7 @@
 							name="search_moduleKey" class="select" id="posts">
 								<option value="0">选择考核周期</option>
 						</select>
-						</span>选择时间： <input id="dd" name="dd" type="text" class="easyui-datebox"
-							>
+						</span>选择时间： <input id="dd" name="dd" type="text" class="easyui-datebox">
 					</div>
 					<span>导入文件 : </span><span class="btn-upload form-group"> <input
 						class="input-text upload-url" type="text" name="excelFile"

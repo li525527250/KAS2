@@ -18,6 +18,7 @@ import cn.com.broad.impl.KPIindexDaoImpl;
 
 /**
  * Servlet implementation class SelectKpiindexByPostID
+ * 通过岗位查询出该岗位下的所有kpi指标
  */
 public class SelectKpiindexByPostID extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -40,9 +41,9 @@ public class SelectKpiindexByPostID extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
-		int postID = Integer.parseInt(request.getParameter("postID"));
+		int postID = Integer.parseInt(request.getParameter("postID"));//获取岗位ID
 		KPIindexDaoImpl kpIindexDaoImpl = new KPIindexDaoImpl();
-		List<Kpiindex> list = kpIindexDaoImpl.getKPIindexByPostID(postID);
+		List<Kpiindex> list = kpIindexDaoImpl.getKPIindexByPostID(postID);//通过岗位ID查询出刚岗位下的KPI指标
 		HttpSession session = request.getSession();
 		session.setAttribute("kpilist", list);
 		request.getRequestDispatcher("SelectDepartmentAllServlet").forward(request, response);

@@ -17,6 +17,7 @@ import cn.com.broad.impl.MobuleDaoImpl;
 
 /**
  * Servlet implementation class SelectModuleByPostIDToUpdateServlet
+ * 通过岗位ID查询出该岗位下的所有模块用户修改kpi指标
  */
 public class SelectModuleByPostIDToUpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -40,8 +41,8 @@ public class SelectModuleByPostIDToUpdateServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
 		MobuleDaoImpl mobuleDaoImpl = new MobuleDaoImpl();
-		int postID = Integer.parseInt(request.getParameter("value"));
-		List<Module> list = mobuleDaoImpl.getModuleByPostID(postID);
+		int postID = Integer.parseInt(request.getParameter("value"));//获取岗位ID
+		List<Module> list = mobuleDaoImpl.getModuleByPostID(postID);//通过岗位ID查询出模块的list集合
 		Gson gson = new Gson();
 		try {
 			response.getWriter().print(gson.toJson(list));

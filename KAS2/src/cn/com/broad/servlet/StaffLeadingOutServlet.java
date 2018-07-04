@@ -20,6 +20,7 @@ import cn.com.broad.impl.StaffKpiIndexModuleDaoImpl;
 
 /**
  * Servlet implementation class StaffLeadingOutServlet
+ * 员工考核模型下载
  */
 public class StaffLeadingOutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -40,15 +41,15 @@ public class StaffLeadingOutServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
-		String excelPuth = request.getParameter("excelFile1");
+		String excelPuth = request.getParameter("excelFile1");//获取员工kpi考核模板excel路径
 		excelPuth = new String(excelPuth.getBytes("ISO-8859-1"), "UTF-8");
 		String message1 = "";
 		if (excelPuth.equals("E:\\staffkpiindex.xls")) {
 			message1 = "数据导出成功";
 			request.setAttribute("message1", message1);
 			StaffKpiIndexModuleDaoImpl staffKpiIndexModuleDaoImpl=new StaffKpiIndexModuleDaoImpl();
-			List<StaffKpiIndexModule> list2=staffKpiIndexModuleDaoImpl.getStaffKpiIndexModule();
-			LeadingOutToStaff.createExcel(list2, excelPuth);
+			List<StaffKpiIndexModule> list2=staffKpiIndexModuleDaoImpl.getStaffKpiIndexModule();//查询出员工kpi模板list集合
+			LeadingOutToStaff.createExcel(list2, excelPuth);//调用员工考核模板帮助类
 			request.getRequestDispatcher("SerlectKpiExamineDateTypeServlet").forward(request, response);
 		} else {
 			message1 = "数据源错误";

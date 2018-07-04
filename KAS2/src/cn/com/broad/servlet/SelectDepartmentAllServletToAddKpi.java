@@ -15,6 +15,7 @@ import cn.com.broad.impl.DepartmentDaoImpl;
 
 /**
  * Servlet implementation class SelectDepartmentAllServletToAddKpi
+ * 查询出所有部门用于添加KPI指标
  */
 public class SelectDepartmentAllServletToAddKpi extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -38,7 +39,7 @@ public class SelectDepartmentAllServletToAddKpi extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
 		DepartmentDaoImpl departmentDaoImpl = new DepartmentDaoImpl();
-		List<Department> list = departmentDaoImpl.getDepertmentAll();
+		List<Department> list = departmentDaoImpl.getDepertmentAll();//查询出所有部门list集合
 		if (list != null) {
 			request.setAttribute("departmentlist", list);
 			request.getRequestDispatcher("system-base.jsp").forward(request, response);

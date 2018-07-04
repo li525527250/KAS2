@@ -19,6 +19,7 @@ import cn.com.broad.impl.KpiExamineDateTypeDaoImpl;
 
 /**
  * Servlet implementation class SerlectKpiExamineDateTypeServlet
+ *查询kpi考核时间类型
  */
 public class SerlectKpiExamineDateTypeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -40,7 +41,7 @@ public class SerlectKpiExamineDateTypeServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
 		KpiExamineDateTypeDaoImpl kpiExamineDateTypeDaoImpl=new KpiExamineDateTypeDaoImpl();
-		List<KpiExamineDateType> list = kpiExamineDateTypeDaoImpl.getExamineDateTypes();
+		List<KpiExamineDateType> list = kpiExamineDateTypeDaoImpl.getExamineDateTypes();//查询出所有考核时间类型list
 		request.setAttribute("list", list);
 		request.getRequestDispatcher("product-brand2.jsp").forward(request, response);
 		out.flush();

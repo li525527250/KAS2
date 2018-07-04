@@ -32,7 +32,7 @@ public class KPIindexDaoImpl implements KPIindexDao {
 	@Override
 	public boolean deleteKPIindex(int kpiindexID) {
 		// TODO Auto-generated method stub
-		String sql = "DELETE from kpiindex where kpiindex.KPAIndexID=?";
+		String sql = "DELETE from kpiindex where kpiindex.KPiIndexID=?";
 		Object[] args = new Object[] { kpiindexID };
 		return BaseDao.executeUpdate(sql, args);
 	}
@@ -44,7 +44,7 @@ public class KPIindexDaoImpl implements KPIindexDao {
 		String sql = "UPDATE kpiindex k set k.KPAIndexName=?,k.postID=?,"
 				+ "k.weight=?,k.span=?,k.indexDefinition=?,k.dateSources=?,k.computationalFormula=?,"
 				+ "k.annualObjectives=?,k.quarterlyAccounting=?,k.currentTarget=?,k.currentReality=?,"
-				+ "k.currentYieldRate=?,k.currentScore=? where k.KPAIndexID=?";
+				+ "k.currentYieldRate=?,k.currentScore=? where k.KPiIndexID=?";
 		Object[] args = new Object[] { kpiindex.getKpiIndexName(), kpiindex.getPostID(), kpiindex.getWeight(),
 				kpiindex.getSpan(), kpiindex.getIndexDefinition(), kpiindex.getDateSources(),
 				kpiindex.getComputationalFormula(), kpiindex.getAnnualObjectives(), kpiindex.getQuarterlyAccounting(),
@@ -57,8 +57,7 @@ public class KPIindexDaoImpl implements KPIindexDao {
 		// TODO Auto-generated method stub
 		String sql = "UPDATE kpiindex k set k.postID=?,"
 				+ "k.weight=?,k.span=?,k.indexDefinition=?,k.dateSources=?,k.computationalFormula=?,"
-				+ "k.annualObjectives=?,k.quarterlyAccounting=?,k.currentTarget=?,k.currentReality=?,"
-				+ "k.currentYieldRate=?,k.currentScore=? where k.KPAIndexID=?";
+				+ "k.annualObjectives=?,k.quarterlyAccounting=?,k.currentTarget=? where k.KPiIndexID=?";
 		Object[] args = new Object[] { kpiindex.getPostID(), kpiindex.getWeight(), kpiindex.getSpan(),
 				kpiindex.getIndexDefinition(), kpiindex.getDateSources(), kpiindex.getComputationalFormula(),
 				kpiindex.getAnnualObjectives(), kpiindex.getQuarterlyAccounting(), kpiindex.getCurrentTarget(),
@@ -143,7 +142,7 @@ public class KPIindexDaoImpl implements KPIindexDao {
 	@Override
 	public boolean hideKpiIndex(int kpiindexID) {
 		// TODO Auto-generated method stub
-		String sql = "update kpiindex k set ifdelete=1 where k.KPAIndexID=?";
+		String sql = "update kpiindex k set ifdelete=1 where k.KPiIndexID=?";
 		Object[] args = new Object[] { kpiindexID };
 		return BaseDao.executeUpdate(sql, args);
 	}
@@ -153,7 +152,7 @@ public class KPIindexDaoImpl implements KPIindexDao {
 	public Kpiindex getKpiIndexByKpiID(int kpiID) {
 		// TODO Auto-generated method stub
 		Kpiindex k = new Kpiindex();
-		String sql = "SELECT * from Kpiindex where KPAIndexID=?";
+		String sql = "SELECT * from Kpiindex where KPiIndexID=?";
 		Connection con = BaseDao.conn();
 		PreparedStatement psta = null;
 		ResultSet rs = null;
@@ -182,5 +181,4 @@ public class KPIindexDaoImpl implements KPIindexDao {
 		}
 		return k;
 	}
-
 }

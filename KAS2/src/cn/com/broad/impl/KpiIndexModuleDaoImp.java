@@ -21,7 +21,7 @@ public class KpiIndexModuleDaoImp implements KpiIndexModuleDao {
 		// TODO Auto-generated method stub
 		List<KpiIndexModule> list = new ArrayList<KpiIndexModule>();
 		String sql = "SELECT d.departmentID,d.depaertmantName,p.postName,"
-				+ "p.postID,m.moduleID,m.moduleName,k.KPAIndexID,k.KPAIndexName from"
+				+ "p.postID,m.moduleID,m.moduleName,k.KPiIndexID,k.KPiIndexName from"
 				+ " kpiindex k INNER JOIN module m on k.moduleID = m.moduleID INNER JOIN"
 				+ " posts p on p.postID = m.postID inner JOIN department d" + " on p.departmentID=d.departmentID";
 		Connection con = BaseDao.conn();

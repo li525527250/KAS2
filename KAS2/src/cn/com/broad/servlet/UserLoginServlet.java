@@ -38,11 +38,11 @@ public class UserLoginServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
-		String userName = request.getParameter("userName");
-		String pwd = request.getParameter("pwd");
+		String userName = request.getParameter("userName");//获取用户名
+		String pwd = request.getParameter("pwd");//获取用户密码
 		Users users = new Users(userName, pwd);
 		UsersDaoImpl usersDaoImpl = new UsersDaoImpl();
-		boolean flag = usersDaoImpl.loginUser(users);
+		boolean flag = usersDaoImpl.loginUser(users);//判断登录
 		if (flag) {
 			HttpSession session = request.getSession();
 			session.setAttribute("users", users);

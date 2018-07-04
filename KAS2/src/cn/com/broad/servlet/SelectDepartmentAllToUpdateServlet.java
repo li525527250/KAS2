@@ -16,6 +16,7 @@ import cn.com.broad.impl.DepartmentDaoImpl;
 import cn.com.broad.impl.KPIindexDaoImpl;
 
 /**
+ * 查询出所有部门用于修改KPI指标
  * Servlet implementation class SelectDepartmentAllToUpdateServlet
  */
 public class SelectDepartmentAllToUpdateServlet extends HttpServlet {
@@ -40,10 +41,10 @@ public class SelectDepartmentAllToUpdateServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
 		DepartmentDaoImpl departmentDaoImpl = new DepartmentDaoImpl();
-		int kpiID = Integer.parseInt(request.getParameter("kpiID"));
+		int kpiID = Integer.parseInt(request.getParameter("kpiID"));//获取单个KPI指标的ID
 		KPIindexDaoImpl kpIindexDaoImpl = new KPIindexDaoImpl();
-		Kpiindex kpiindex = kpIindexDaoImpl.getKpiIndexByKpiID(kpiID);
-		List<Department> list = departmentDaoImpl.getDepertmentAll();
+		Kpiindex kpiindex = kpIindexDaoImpl.getKpiIndexByKpiID(kpiID);//通过KPI指标ID查询出对应的kpi指标
+		List<Department> list = departmentDaoImpl.getDepertmentAll();//查询出所有部门
 		if (list != null) {
 			request.setAttribute("kpiindex1", kpiindex);
 			request.setAttribute("departmentlist", list);

@@ -57,11 +57,11 @@ public class StaffInsertExcelServlet extends HttpServlet {
 			request.setAttribute("insertCount", insertCount);
 			request.setAttribute("addBeDefeated", addBeDefeated);
 				request.setAttribute("BeDefeatedMessage", BeDefeatedMessage);
-			request.getRequestDispatcher("product-brand2.jsp").forward(request, response);
+			request.getRequestDispatcher("SerlectKpiExamineDateTypeServlet").forward(request, response);
 		} else {
 			message = "数据源错误";
 			request.setAttribute("message", message);
-			request.getRequestDispatcher("product-brand2.jsp").forward(request, response);
+			request.getRequestDispatcher("SerlectKpiExamineDateTypeServlet").forward(request, response);
 		}
 		out.flush();
 		out.close();
